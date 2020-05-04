@@ -1,25 +1,18 @@
-var turl;
-
-var query = { active: true, currentWindow: true };
-  function callback(tabs) {
-	var currentTab = tabs[0]; // there will be only one in this array
-	turl = currentTab.url;
-    console.log(turl); // also has properties like currentTab.id
-  }
-  chrome.tabs.query(query, callback);
+var turl = "";
 
 function reportHandler(e) {
 	e.preventDefault();
 	// Clicked report button
-	fetch("https://fatcher-back.herokuapp.com/report", {
+	fetch("http://localhost:3000/report", {
 		method: "POST",
 		headers: {
 			"content-type": "application/json",
 		},
-		body: {
+		body: JSON.stringify({
 			url: turl,
-		},
+		}),
 	})
+		.then((res) => res.json())
 		.then((response) => {
 			console.log(response);
 			updateReportCount();
@@ -30,17 +23,18 @@ function reportHandler(e) {
 }
 
 function updateReportCount() {
-	fetch("https://fatcher-back.herokuapp.com/stats", {
+	fetch("http://localhost:3000/stats", {
 		method: "POST",
 		headers: {
 			"content-type": "application/json",
 		},
-		body: {
+		body: JSON.stringify({
 			url: turl,
-		},
+		}),
 	})
+		.then((res) => res.json())
 		.then((response) => {
-			document.querySelector("#numReports").textContent = response.reports;
+			document.querySelector("#numReports").innerHTML = response.domainReports;
 		})
 		.catch((err) => {
 			console.log(err);
@@ -48,8 +42,16 @@ function updateReportCount() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-	document
-		.querySelector("#reportPage")
-		.addEventListener("click", reportHandler);
-	updateReportCount();
+	var query = { active: true, currentWindow: true };
+	chrome.tabs.query(query, (tabs) => {
+		var currentTab = tabs[0]; // there will be only one in this array
+		turl = currentTab.url;
+		console.log(turl); // also has properties like currentTab.id
+		document.querySelector("#url").innerHTML = turl;
+
+		document
+			.querySelector("#reportPage")
+			.addEventListener("click", reportHandler);
+		updateReportCount();
+	});
 });
