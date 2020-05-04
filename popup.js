@@ -3,7 +3,7 @@ var turl = "";
 function reportHandler(e) {
 	e.preventDefault();
 	// Clicked report button
-	fetch("http://localhost:3000/report", {
+	fetch("https://fatcher-back.herokuapp.com/report", {
 		method: "POST",
 		headers: {
 			"content-type": "application/json",
@@ -23,7 +23,7 @@ function reportHandler(e) {
 }
 
 function updateReportCount() {
-	fetch("http://localhost:3000/stats", {
+	fetch("https://fatcher-back.herokuapp.com/stats", {
 		method: "POST",
 		headers: {
 			"content-type": "application/json",
