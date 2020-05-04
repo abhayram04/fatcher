@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-	<h2>Fact checker</h2>
+	<head>
+		<title>Fatcher</title>
+		<script src="popup.js"></script>
+		<style>
+			#numReports {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Fatcher</h1>
 
-        <button onclick="myFun()">Upvote: 0</button>
-	<button onclick="myFun()">Downvote: 0</button>
-<p id="demo"></p>
-<script src="background.js"></script>
-</body>
+		<div style="width: 200px;">
+			<button id="reportPage">Mark as fake news</button>
+
+			<p>Number of Reports: <span id="numReports"></span></p>
+		</div>
+	</body>
 </html>
