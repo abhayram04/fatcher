@@ -4,7 +4,7 @@ var query = { active: true, currentWindow: true };
   function callback(tabs) {
 	var currentTab = tabs[0]; // there will be only one in this array
 	turl = currentTab.url;
-    console.log(currentTab.url); // also has properties like currentTab.id
+    console.log(turl); // also has properties like currentTab.id
   }
   chrome.tabs.query(query, callback);
 
