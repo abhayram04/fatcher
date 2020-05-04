@@ -1,35 +1,45 @@
-function awesome() {
-  // Do something awesome!
-	
-	document.getElementById("demo").innerHTML = "1";
-	
-
+function reportHandler(e) {
+	e.preventDefault();
+	// Clicked report button
+	fetch("https://fatcher-back.herokuapp.com/report", {
+		method: "POST",
+		headers: {
+			"content-type": "application/json",
+		},
+		body: {
+			url: window.location.href,
+		},
+	})
+		.then((response) => {
+			console.log(response);
+			updateReportCount();
+		})
+		.catch((err) => {
+			console.log(err);
+		});
 }
 
-function totallyAwesome() {
-  // do something TOTALLY awesome!
+function updateReportCount() {
+	fetch("https://fatcher-back.herokuapp.com/stats", {
+		method: "POST",
+		headers: {
+			"content-type": "application/json",
+		},
+		body: {
+			url: window.location.href,
+		},
+	})
+		.then((response) => {
+			document.querySelector("#numReports").textContent = response.reports;
+		})
+		.catch((err) => {
+			console.log(err);
+		});
 }
 
-function awesomeTask() {
-  awesome();
-  totallyAwesome();
-}
-
-function clickHandler(e) {
-  setTimeout(awesomeTask, 1000);
-}
-
-function main() {
-  // Initialization work goes here.
-}
-
-
-
-
-// Add event listeners once the DOM has fully loaded by listening for the
-// `DOMContentLoaded` event on the document, and adding your listeners to
-// specific elements when it triggers.
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector('button').addEventListener('click', clickHandler);
-  main();
+document.addEventListener("DOMContentLoaded", function () {
+	document
+		.querySelector("#reportPage")
+		.addEventListener("click", reportHandler);
+	updateReportCount();
 });
