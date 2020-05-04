@@ -1,9 +1,18 @@
+
 function awesome() {
   // Do something awesome!
 	
 	document.getElementById("demo").innerHTML = "1";
-	
+ 
 
+  var query = { active: true, currentWindow: true };
+  function callback(tabs) {
+    var currentTab = tabs[0]; // there will be only one in this array
+    console.log(currentTab.url); // also has properties like currentTab.id
+  }
+  chrome.tabs.query(query, callback);
+ 
+  
 }
 
 function totallyAwesome() {
@@ -21,14 +30,9 @@ function clickHandler(e) {
 
 function main() {
   // Initialization work goes here.
+ 
 }
 
-
-
-
-// Add event listeners once the DOM has fully loaded by listening for the
-// `DOMContentLoaded` event on the document, and adding your listeners to
-// specific elements when it triggers.
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('button').addEventListener('click', clickHandler);
   main();
