@@ -3,11 +3,11 @@
 	"name": "Fatcher",
 	"version": "0.1",
 	"icons": {
-		"48": "assets/img/logo.png"
+		"48": "assets/img/lf5.png"
 	},
 	"permissions": ["tabs"],
 	"browser_action": {
-		"default_icon": "assets/img/logo.png",
+		"default_icon": "assets/img/lf5.png",
 		"default_title": "Fatcher",
 		"default_popup": "app.html"
 	}

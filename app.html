@@ -3,21 +3,25 @@
 	<head>
 		<title>Fatcher</title>
 		<script src="popup.js"></script>
-		<style>
-			#numReports {
-				color: red;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="/assets/style/fstyle.css"/>
+		
 	</head>
 	<body>
-		<h1>Fatcher</h1>
-
-		<p>Curr URL: <span id="url"></span></p>
-
+		
+		<h1 id="ftit">Fatcher</h1>
+		<hr>
+		<br>
+		<div id="mdiv">
+		<p>Current page details</p>
+		<p id="ptit">Title: <span id="ctit"></span></p>
+		<p id="purl">URL: <span id="url"></span></p>
+		</div>
+		<br>
 		<div style="width: 200px;">
 			<button id="reportPage">Mark as fake news</button>
-
-			<p>Number of Reports: <span id="numReports"></span></p>
+			<p id="cont">Number of Reports: <span id="numReports"></span></p>
 		</div>
+
+		<!--<img src="/assets/img/lm.png"/ id="lmo">-->
 	</body>
 </html>
