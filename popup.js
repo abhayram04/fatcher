@@ -1,4 +1,5 @@
 var turl = "";
+var ulog = "";
 
 function reportHandler(e) {
 	// Clicked report button
@@ -11,6 +12,8 @@ function reportHandler(e) {
 			url: turl,
 		}),
 	})
+
+
 		.then((res) => res.json())
 
 		.then((response) => {
@@ -46,6 +49,11 @@ function updateReportCount() {
 
 document.addEventListener("DOMContentLoaded", function () {
 	var query = { active: true, currentWindow: true };
+
+	chrome.identity.getProfileUserInfo(function (userInfo) {
+		ulog = userInfo.email;
+		console.log(ulog);
+	});
 
 	chrome.tabs.query(query, (tabs) => {
 		var currentTab = tabs[0]; // there will be only one in this array

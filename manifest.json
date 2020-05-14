@@ -5,7 +5,11 @@
 	"icons": {
 		"48": "assets/img/lf5.png"
 	},
-	"permissions": ["tabs"],
+	"permissions": [
+		"tabs",
+		"identity",
+		"identity.email"
+	],
 	"browser_action": {
 		"default_icon": "assets/img/lf5.png",
 		"default_title": "Fatcher",

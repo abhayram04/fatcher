@@ -3,14 +3,12 @@
 }
     #reportPage {
         min-width: 150px;
-        
         line-height: 2.5;
         font-size: 1rem;
         text-align: center;
         color: #fff;
         text-shadow: 1px 1px 1px #000;
         border-radius: 10px;
-        
         
     }
 
@@ -55,7 +53,7 @@
 
 @media (prefers-color-scheme: dark) {
   body {
-   background-color:#000000;
+   background-color:#000;
   }
   h1,p{
     color:white;
