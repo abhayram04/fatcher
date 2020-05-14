@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Fatcher</title>
+		<script src="popup.js"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/style/fstyle.css" />
+	</head>
 
-<head>
-	<title>Fatcher</title>
-	<script src="popup.js"></script>
-	<link rel="stylesheet" type="text/css" href="/assets/style/fstyle.css" />
+	<body>
+		<h1 id="ftit">Fatcher</h1>
+		<hr />
 
-</head>
+		<div id="mdiv">
+			<p>Current page details</p>
+			<p id="ptit">Title: <span id="ctit"></span></p>
+			<p id="purl">URL: <span id="url"></span></p>
+		</div>
+		<br />
+		<center>
+			<div id="mcons"><button id="reportPage">Mark as fake news</button></div>
+		</center>
 
-<body>
+		<p id="cont">Number of Domain Reports: <span id="numReports"></span></p>
+		<p id="cont">Number of Page Reports: <span id="pageReports"></span></p>
 
-	<h1 id="ftit">Fatcher</h1>
-	<hr>
-
-	<div id="mdiv">
-		<p>Current page details</p>
-		<p id="ptit">Title: <span id="ctit"></span></p>
-		<p id="purl">URL: <span id="url"></span></p>
-	</div>
-	<br>
-	<center>
-		<div id="mcons"><button id="reportPage">Mark as fake news</button></div>
-	</center>
-
-	<p id="cont">Number of Reports: <span id="numReports"></span></p>
-
-
-	<!--<img src="/assets/img/lm.png"/ id="lmo">-->
-</body>
-
+		<!--<img src="/assets/img/lm.png"/ id="lmo">-->
+	</body>
 </html>
