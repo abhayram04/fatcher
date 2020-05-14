@@ -7,7 +7,6 @@
         font-size: 1rem;
         text-align: center;
         color: #fff;
-        text-shadow: 1px 1px 1px #000;
         border-radius: 10px;
         
     }
@@ -21,7 +20,7 @@
         box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                     inset 2px 2px 3px rgba(0, 0, 0, .6);
     }
-#numReports {
+#numReports, #pageReports{
     color:tomato; font-family:Arial, Helvetica, sans-serif;
     font-weight: bolder;
 }
@@ -43,15 +42,38 @@
     text-align: center;
 }
 #ftit{
-    text-align: center;
-    font-style: italic;
+    width:200px;
+    border-radius: 10%;
 }
 #mdiv{  
     border-radius: 5%;
     margin: 5px;
 }
 
-@media (prefers-color-scheme: dark) {
+body {
+    background-color: #845EC21;
+   }
+   h1,p{
+     color:black;
+   }
+   hr{
+     border:1px  dotted #000000;
+     }
+ 
+     #reportPage{
+         border: 2px solid #CC4125;
+         font-family: Arial, Helvetica, sans-serif;
+         background-color: #fff;
+         color: black;
+     }
+     #reportPage:hover {
+         border: 2px solid rgba(34,40,49,1);
+         background-color: #CC4125;
+        color:#fff;
+     }
+
+
+/*@media (prefers-color-scheme: dark) {
   body {
    background-color:#000;
   }
@@ -80,25 +102,6 @@
 
 
 @media (prefers-color-scheme: light) {
-  body {
-   background-color: #845EC21;
-  }
-  h1,p{
-    color:black;
-  }
-  hr{
-    border:1px  dotted #000000;
-    }
-
-    #reportPage{
-        border: 2px solid red;
-        background-color: rgba(34,40,49,1);
-    }
-    #reportPage:hover {
-        border: 2px solid rgba(34,40,49,1);
-        background-color: rgba(255, 0, 0, 0.7);
-
-    }
-
 }
+*/
 
