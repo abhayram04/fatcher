@@ -19,10 +19,16 @@ function reportHandler(e) {
 		.then((response) => {
 			console.log(response);
 			updateReportCount();
+			document.getElementById("reportPage").innerHTML = "REPORTED"
 		})
 		.catch((err) => {
 			console.log(err);
 		});
+}
+function onSignIn(googleUser) {
+	var profile = googleUser.getBasicProfile();
+
+	console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 }
 
 function updateReportCount() {
@@ -49,7 +55,6 @@ function updateReportCount() {
 
 document.addEventListener("DOMContentLoaded", function () {
 	var query = { active: true, currentWindow: true };
-
 	chrome.identity.getProfileUserInfo(function (userInfo) {
 		ulog = userInfo.email;
 		console.log(ulog);

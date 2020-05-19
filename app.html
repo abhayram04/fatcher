@@ -5,10 +5,16 @@
 	<title>Fatcher</title>
 	<script src="popup.js"></script>
 	<link rel="stylesheet" type="text/css" href="/assets/style/fstyle.css" />
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+	<meta name="google-signin-client_id"
+		content="977698507477-69l4mqu7h1jish646t7r4rv8t3ud41r3.apps.googleusercontent.com">
 </head>
 
 <body>
-	<center><img src="/assets/img/banner.png" / id="ftit"></center>
+	<center><img src="/assets/img/banner.png" id="ftit"></center>
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 
 	<div id="mdiv">
 		<p>Current page details</p>
