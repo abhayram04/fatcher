@@ -1,6 +1,14 @@
 #mcons{
     width:200px;
 }
+#maind{
+    width:250px;
+}
+#mdiv{
+    width:230px;
+    word-wrap: break-word;
+
+}
     #reportPage {
         min-width: 150px;
         line-height: 2.5;
