@@ -46,7 +46,9 @@ function relog() {
 			if(email){
 				document.getElementById("overr").innerHTML="You are now logged in: "+email;
 			}
-			
+			else{
+				document.getElementById("overr").innerHTML="<button id='tag'>Login</button>";
+			}
 		};
 		x.send();
 	});
@@ -76,7 +78,7 @@ function updateReportCount() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-	relog();
+
 	var query = { active: true, currentWindow: true };
 
 	//Code to get email from logged-in Chrome profile
