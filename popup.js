@@ -30,6 +30,14 @@ function onSignIn(googleUser) {
 
 	console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 }
+function relog() {
+	ui.start('#firebaseui-auth-container', {
+		signInOptions: [
+			firebase.auth.GoogleAuthProvider.PROVIDER_ID
+		],
+		// Other config options...
+	});
+}
 
 function updateReportCount() {
 	fetch("https://fatcher-back.herokuapp.com/stats", {
@@ -54,6 +62,21 @@ function updateReportCount() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+	var firebaseConfig = {
+		apiKey: "AIzaSyCxu5GJylCEFUBohUMO5PRYP6mYBQvm7Fo",
+		authDomain: "fatcher-sa.firebaseapp.com",
+		databaseURL: "https://fatcher-sa.firebaseio.com",
+		projectId: "fatcher-sa",
+		storageBucket: "fatcher-sa.appspot.com",
+		messagingSenderId: "515487735728",
+		appId: "1:515487735728:web:59d3f0efc5533e0b920075",
+		measurementId: "G-N4MLM1WWHH"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
+	var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
 	var query = { active: true, currentWindow: true };
 	chrome.identity.getProfileUserInfo(function (userInfo) {
 		ulog = userInfo.email;
@@ -71,6 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		document
 			.querySelector("#reportPage")
 			.addEventListener("click", reportHandler);
+		document
+			.querySelector("#tag")
+			.addEventListener("click", relog);
 		updateReportCount();
 	});
 });

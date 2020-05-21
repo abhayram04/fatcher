@@ -3,9 +3,16 @@
 
 <head>
 	<title>Fatcher</title>
+	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
 	<script src="popup.js"></script>
 	<link rel="stylesheet" type="text/css" href="/assets/style/fstyle.css" />
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+	<!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
 
 	<meta name="google-signin-client_id"
 		content="977698507477-69l4mqu7h1jish646t7r4rv8t3ud41r3.apps.googleusercontent.com">
@@ -16,7 +23,7 @@
 		<center><img src="/assets/img/banner.png" id="ftit"></center>
 		<div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-
+		<button id="tag">Login</button>
 		<div id="mdiv">
 			<p>Current page details</p>
 			<p id="ptit">Title: <span id="ctit"></span></p>
@@ -26,11 +33,20 @@
 		<center>
 			<div id="mcons"><button id="reportPage">REPORT THIS PAGE</button></div>
 		</center>
+
 		<p id="cont">Number of Page Reports: <span id="pageReports"></span></p>
 		<p id="cont">Number of Domain Reports: <span id="numReports"></span></p>
 
 		<!--<img src="/assets/img/lm.png"/ id="lmo">-->
 	</div>
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+
+	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+	<script src="/__/firebase/init.js"></script>
+
 </body>
 
 </html>
