@@ -2,11 +2,6 @@
 	"manifest_version": 2,
 	"name": "Fatcher",
 	"version": "0.1",
-	"background": {
-		"scripts": [
-			"background.js"
-		]
-	},
 	"content_security_policy": "script-src 'self' https://cdn.firebase.com https://www.gstatic.com; object-src 'self'",
 	"icons": {
 		"48": "assets/img/fl2.png"
@@ -14,8 +9,15 @@
 	"permissions": [
 		"tabs",
 		"identity",
-		"identity.email"
+		"identity.email",
+		"https://github.com/login/oauth/access_token",
+		"storage"
 	],
+	"content_scripts":[{
+		"matches":["https://github.com/robots.txt*"],
+		"js":["libs/chrome-ex-oauth2/injection.js"],
+		"run_at":"document_start"
+	}],
 	"browser_action": {
 		"default_icon": "assets/img/fl2.png",
 		"default_title": "Fatcher",

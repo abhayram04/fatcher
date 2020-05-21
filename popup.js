@@ -25,17 +25,30 @@ function reportHandler(e) {
 			console.log(err);
 		});
 }
-function onSignIn(googleUser) {
-	var profile = googleUser.getBasicProfile();
 
-	console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
 function relog() {
-	ui.start('#firebaseui-auth-container', {
-		signInOptions: [
-			firebase.auth.GoogleAuthProvider.PROVIDER_ID
-		],
-		// Other config options...
+	chrome.identity.getAuthToken({
+		interactive: true
+	}, function (token) {
+		if (chrome.runtime.lastError) {
+			alert(chrome.runtime.lastError.message);
+			return;
+		}
+
+		var x = new XMLHttpRequest();
+		x.open('GET', 'https://www.googleapis.com/oauth2/v2/userinfo?alt=json&access_token=' + token);
+		x.onload = function () {
+			 
+			var user_info = JSON.parse(x.response);
+			console.log(user_info.email);
+			var email = user_info.email;
+
+			if(email){
+				document.getElementById("overr").innerHTML="You are now logged in: "+email;
+			}
+			
+		};
+		x.send();
 	});
 }
 
@@ -62,26 +75,15 @@ function updateReportCount() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-	var firebaseConfig = {
-		apiKey: "AIzaSyCxu5GJylCEFUBohUMO5PRYP6mYBQvm7Fo",
-		authDomain: "fatcher-sa.firebaseapp.com",
-		databaseURL: "https://fatcher-sa.firebaseio.com",
-		projectId: "fatcher-sa",
-		storageBucket: "fatcher-sa.appspot.com",
-		messagingSenderId: "515487735728",
-		appId: "1:515487735728:web:59d3f0efc5533e0b920075",
-		measurementId: "G-N4MLM1WWHH"
-	};
-	// Initialize Firebase
-	firebase.initializeApp(firebaseConfig);
-	firebase.analytics();
-	var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
+	relog();
 	var query = { active: true, currentWindow: true };
-	chrome.identity.getProfileUserInfo(function (userInfo) {
-		ulog = userInfo.email;
-		console.log(ulog);
-	});
+
+	//Code to get email from logged-in Chrome profile
+	//chrome.identity.getProfileUserInfo(function (userInfo) {
+	//	ulog = userInfo.email;
+	//	console.log(ulog);
+	//});
 
 	chrome.tabs.query(query, (tabs) => {
 		var currentTab = tabs[0]; // there will be only one in this array
