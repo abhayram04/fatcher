@@ -47,7 +47,7 @@ function relog() {
         var email = user_info.email;
 
         document.getElementById("overr").innerHTML =
-          "You are now logged in: " + email;
+          "You are logged in: <br> " + email;
         if (!email) {
           document.getElementById("overr").innerHTML =
             "<button id='tag'>Login</button>";
@@ -82,12 +82,20 @@ function updateReportCount() {
 
 document.addEventListener("DOMContentLoaded", function () {
   var query = { active: true, currentWindow: true };
-  relog();
+  //relog();
+
   //Code to get email from logged-in Chrome profile
-  //chrome.identity.getProfileUserInfo(function (userInfo) {
-  //	ulog = userInfo.email;
-  //	console.log(ulog);
-  //});
+  chrome.identity.getProfileUserInfo(function (userInfo) {
+    ulog = userInfo.email;
+    console.log(ulog);
+    if (ulog) {
+      document.getElementById("overr").innerHTML =
+        "You are logged in: <br> " + ulog;
+    } else {
+      document.getElementById("overr").innerHTML =
+        "You must be logged into chrome!";
+    }
+  });
 
   chrome.tabs.query(query, (tabs) => {
     var currentTab = tabs[0]; // there will be only one in this array
@@ -100,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document
       .querySelector("#reportPage")
       .addEventListener("click", reportHandler);
-    document.querySelector("#tag").addEventListener("click", relog);
+    //document.querySelector("#tag").addEventListener("click", relog);
     updateReportCount();
   });
 });

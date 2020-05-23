@@ -6,6 +6,10 @@
   "icons": {
     "48": "assets/img/ff4-logo.png"
   },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "permissions": ["tabs", "identity", "identity.email"],
   "browser_action": {
     "default_icon": "assets/img/ff4-logo.png",
