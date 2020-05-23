@@ -4,11 +4,11 @@
   "version": "0.1",
   "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
   "icons": {
-    "48": "assets/img/fl2.png"
+    "48": "assets/img/ff4-logo.png"
   },
   "permissions": ["tabs", "identity", "identity.email"],
   "browser_action": {
-    "default_icon": "assets/img/fl2.png",
+    "default_icon": "assets/img/ff4-logo.png",
     "default_title": "Fatcher",
     "default_popup": "app.html"
   },
