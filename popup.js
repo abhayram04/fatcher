@@ -10,6 +10,7 @@ function reportHandler(e) {
     },
     body: JSON.stringify({
       url: turl,
+      user: ulog,
     }),
   })
     .then((res) => res.json())
@@ -24,40 +25,6 @@ function reportHandler(e) {
     });
 }
 
-function relog() {
-  chrome.identity.getAuthToken(
-    {
-      interactive: true,
-    },
-    function (token) {
-      if (chrome.runtime.lastError) {
-        alert(chrome.runtime.lastError.message);
-        return;
-      }
-
-      var x = new XMLHttpRequest();
-      x.open(
-        "GET",
-        "https://www.googleapis.com/oauth2/v2/userinfo?alt=json&access_token=" +
-          token
-      );
-      x.onload = function () {
-        var user_info = JSON.parse(x.response);
-        console.log(user_info.email);
-        var email = user_info.email;
-
-        document.getElementById("overr").innerHTML =
-          "You are logged in: <br> " + email;
-        if (!email) {
-          document.getElementById("overr").innerHTML =
-            "<button id='tag'>Login</button>";
-        }
-      };
-      x.send();
-    }
-  );
-}
-
 function updateReportCount() {
   fetch("https://fatcher-back.herokuapp.com/stats", {
     method: "POST",
@@ -66,6 +33,7 @@ function updateReportCount() {
     },
     body: JSON.stringify({
       url: turl,
+      user: ulog,
     }),
   })
     .then((res) => res.json())
@@ -82,7 +50,6 @@ function updateReportCount() {
 
 document.addEventListener("DOMContentLoaded", function () {
   var query = { active: true, currentWindow: true };
-  //relog();
 
   //Code to get email from logged-in Chrome profile
   chrome.identity.getProfileUserInfo(function (userInfo) {
@@ -108,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document
       .querySelector("#reportPage")
       .addEventListener("click", reportHandler);
-    //document.querySelector("#tag").addEventListener("click", relog);
     updateReportCount();
   });
 });

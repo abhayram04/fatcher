@@ -2,23 +2,14 @@
   "manifest_version": 2,
   "name": "Fatcher",
   "version": "0.1",
-  "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
   "icons": {
     "48": "assets/img/ff4-logo.png"
-  },
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
   },
   "permissions": ["tabs", "identity", "identity.email"],
   "browser_action": {
     "default_icon": "assets/img/ff4-logo.png",
     "default_title": "Fatcher",
     "default_popup": "app.html"
-  },
-  "oauth2": {
-    "client_id": "977698507477-69l4mqu7h1jish646t7r4rv8t3ud41r3.apps.googleusercontent.com",
-    "scopes": ["https://www.googleapis.com/auth/userinfo.email"]
   },
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3kARNI3PXmH+kuwyY20uYJB7RWoLvWkICIa+yl+q1bGl8POugPDVrV9JW8GhyXRy5EkNe02kB0CqQzgFauMZaY+vhXgg/0OpQbYihMKj/iOPP3egkaacrjBuRAZ8tajH59XUaJQwuMZ1FvJtnwaS4J9gBazCZ3LOBel8IqlVs9td+P6VUFMHPCSsNzQtWr5jfs1qqLdrugI9N4dRQV7uCQB6lCUrqjfel+qqBqOoM/Bg09+4Kj82NxoQYRVYt1eO1d43AkJoZ7jy+pwBsG0SuRN0zUWUXBFzdyBliOMLY94/m3fXQPHO2eGVkUd4gqQPmtoZoIBFE+gpqy8RQGukFQIDAQAB"
 }
