@@ -1,6 +1,10 @@
 var turl = "";
 var ulog = "";
 
+var _gaq = _gaq || [];
+_gaq.push(["_setAccount", "UA-167581630-1"]);
+_gaq.push(["_trackPageview"]);
+
 function reportHandler(e) {
   // Clicked report button
   fetch("https://fatcher-back.herokuapp.com/report", {
@@ -71,6 +75,16 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#ctit").innerHTML = tit;
     console.log(turl); // also has properties like currentTab.id
     document.querySelector("#url").innerHTML = turl;
+
+    //Google Analytics
+    (function () {
+      var ga = document.createElement("script");
+      ga.type = "text/javascript";
+      ga.async = true;
+      ga.src = "https://ssl.google-analytics.com/ga.js";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
 
     document
       .querySelector("#reportPage")
