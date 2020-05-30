@@ -22,7 +22,6 @@ function reportHandler(e) {
     .then((response) => {
       console.log(response);
       updateReportCount();
-      document.getElementById("reportPage").innerHTML = "REPORTED";
     })
     .catch((err) => {
       console.log(err);
@@ -64,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "You are logged in: <br> " + ulog;
     } else {
       document.getElementById("overr").innerHTML =
-        "You must be logged into chrome!";
+        "You must be logged into Chrome & have sync enabled to report!";
     }
   });
 
@@ -85,10 +84,12 @@ document.addEventListener("DOMContentLoaded", function () {
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(ga, s);
     })();
-
-    document
+    if(ulog){
+      document
       .querySelector("#reportPage")
       .addEventListener("click", reportHandler);
+    }
+    
     updateReportCount();
   });
 });
