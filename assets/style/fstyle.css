@@ -1,77 +1,89 @@
+#fatitle{
+  font-family: 'Orbitron';
+  letter-spacing: 1px;
+          font-size: 40px;
+          text-align: center;
+          margin-bottom: 2px;
+}
+
+#fatsub{
+  text-align: center;
+  font-family: 'Montserrat';
+  font-weight: 400;
+          margin-top: 0;
+}
 #mcons {
   width: 200px;
 }
+
 #maind {
   width: 250px;
+ margin:0; 
 }
 #mdiv {
   width: 230px;
   word-wrap: break-word;
+  background-color:rgba(26, 26, 26,0.8);  margin:0; padding:10px; border-radius: 5px;
+}
+#rpage{
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 800px;
 }
 #reportPage {
   min-width: 150px;
   line-height: 2.5;
-  font-size: 1rem;
   text-align: center;
-  color: #fff;
   border-radius: 10px;
+  border: 2px solid #cc4125;
+  background-color: #fff;
+  color: black;
 }
 
 #reportPage:hover {
   cursor: pointer;
-}
-
-#reportPage:active {
-  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
-}
-#numReports,
-#pageReports {
-  color: tomato;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bolder;
-}
-
-#ptit,
-#purl {
-  font-size: 14px;
-  font-weight: bolder;
-}
-#ctit,
-#url {
-  font-weight: 400;
-}
-
-#lmo {
-  width: 30pt;
-}
-#cont {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  text-align: center;
-}
-#ftit {
-  width: 200px;
-  border-radius: 10%;
-}
-#mdiv {
-  border-radius: 5%;
-  margin: 5px;
-}
-
-h1,
-p {
-  color: black;
-}
-
-#reportPage {
-  border: 2px solid #cc4125;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #fff;
-  color: black;
-}
-#reportPage:hover {
   border: 2px solid rgba(34, 40, 49, 1);
   background-color: #cc4125;
   color: #fff;
 }
+
+#reportPage:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 230, 230, 0.1),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+#numReports,
+#pageReports {
+  font-family: 'Assistant'; 
+  font-size:18px;
+  color: tomato;
+  font-weight: bolder;
+}
+
+#btit,#overr{
+  font-family: 'Manrope';
+  color: #fff;
+}
+
+#ptit,#purl{
+  font-family: 'Krub'; 
+  font-size: 16px;
+  font-weight: bolder;
+  color: tomato;
+}
+
+#ctit,
+#url {
+  font-family: 'Assistant'; 
+  font-size:14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+
+#cont {
+  font-family: 'Assistant'; 
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+}
+

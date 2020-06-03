@@ -3,52 +3,58 @@
   <head>
     <title>Fatcher</title>
     <link
-      href="https://fonts.googleapis.com/css?family=Luckiest+Guy"
+      href="https://fonts.googleapis.com/css?family=Orbitron"
       rel="stylesheet"
       type="text/css"
     />
-   
-
+    <link
+      href="https://fonts.googleapis.com/css?family=Assistant"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Manrope"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Krub"
+    rel="stylesheet"
+    type="text/css"
+  />    
+    
     <script src="popup.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/style/fstyle.css" />
   </head>
 
   <body>
     <div id="maind">
-      <h1
-        style="
-          font-family: 'Luckiest Guy';
-          font-size: 50px;
-          text-align: center;
-          margin-bottom: 2px;
-        "
-      >
-        Fatcher.
+      <h1 id="fatitle">
+        FATCHER
       </h1>
-      <p
-        style="
-          text-align: center;
-          font-family: Arial, Helvetica, sans-serif;
-          margin-top: 0;
-        "
-      >
+      <p id="fatsub">
         People driven fact checking tool
       </p>
-      <hr />
       <div id="mdiv">
         <p><span id="overr"></span></p>
 
-        <p>Current page details</p>
-        <p id="ptit">Title: <span id="ctit"></span></p>
-        <p id="purl">URL: <span id="url"></span></p>
-      </div>
+        <p id="btit">Current page details</p>
+        <p><span id="ptit">Title: </span><span id="ctit"></span></p>
+        <p><span id="purl">URL: </span><span id="url"></span></p>
       <br />
       <center>
-        <div id="mcons"><button id="reportPage">MARK AS FAKE NEWS</button></div>
+        <div id="mcons"><button id="reportPage"><span id="rpage">REPORT THIS PAGE</span></button></div>
       </center>
 
       <p id="cont">Number of Page Reports: <span id="pageReports"></span></p>
       <p id="cont">Number of Domain Reports: <span id="numReports"></span></p>
+    </div>
+
     </div>
   </body>
 </html>

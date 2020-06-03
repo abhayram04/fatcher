@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //Code to get email from logged-in Chrome profile
   chrome.identity.getProfileUserInfo(function (userInfo) {
     ulog = userInfo.email;
-    console.log(ulog);
+
     if (ulog) {
       document.getElementById("overr").innerHTML =
         "You are logged in: <br> " + ulog;
@@ -74,7 +74,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#ctit").innerHTML = tit;
     console.log(turl); // also has properties like currentTab.id
     document.querySelector("#url").innerHTML = turl;
-
+    if(ulog){
+      document
+      .querySelector("#reportPage")
+      .addEventListener("click", reportHandler);
+    }
+    
+    updateReportCount();
     //Google Analytics
     (function () {
       var ga = document.createElement("script");
@@ -84,12 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(ga, s);
     })();
-    if(ulog){
-      document
-      .querySelector("#reportPage")
-      .addEventListener("click", reportHandler);
-    }
     
-    updateReportCount();
   });
 });
