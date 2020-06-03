@@ -23,11 +23,12 @@
 #mdiv {
   width: 230px;
   word-wrap: break-word;
-  background-color:rgba(26, 26, 26,0.8);  margin:0; padding:10px; border-radius: 5px;
+  border: 1px solid tomato;
+  margin:0; padding:10px; border-radius: 5px;
 }
 #rpage{
-  font-family: 'Montserrat';
-  font-size: 18px;
+  font-family: 'Assistant'; 
+  font-size: 20px;
   font-weight: 800px;
 }
 #reportPage {
@@ -35,16 +36,15 @@
   line-height: 2.5;
   text-align: center;
   border-radius: 10px;
-  border: 2px solid #cc4125;
-  background-color: #fff;
-  color: black;
+  border: 2px solid rgba(34, 40, 49, 1);
+  background-color:  #e60000;
+  color: #ffffff;
 }
 
 #reportPage:hover {
   cursor: pointer;
   border: 2px solid rgba(34, 40, 49, 1);
-  background-color: #cc4125;
-  color: #fff;
+  color: #ffffff;
 }
 
 #reportPage:active {
@@ -54,21 +54,28 @@
 #numReports,
 #pageReports {
   font-family: 'Assistant'; 
-  font-size:18px;
-  color: tomato;
+  font-size:16px;
+  color:  #ff3333;
   font-weight: bolder;
 }
 
 #btit,#overr{
-  font-family: 'Manrope';
-  color: #fff;
+  font-family: 'Krub'; 
+  font-size: 12px;
+  color: #000000;
+}
+#overr{
+  font-weight: 400;
+}
+#btit{
+  font-weight: bolder;
 }
 
 #ptit,#purl{
   font-family: 'Krub'; 
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bolder;
-  color: tomato;
+  color: #ff3333;
 }
 
 #ctit,
@@ -76,7 +83,7 @@
   font-family: 'Assistant'; 
   font-size:14px;
   font-weight: 500;
-  color: #fff;
+  color: #000000;
 }
 
 
@@ -84,6 +91,6 @@
   font-family: 'Assistant'; 
   font-size: 16px;
   text-align: center;
-  color: #fff;
+  color: #000000;
 }
 
