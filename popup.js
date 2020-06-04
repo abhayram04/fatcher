@@ -21,6 +21,12 @@ function reportHandler(e) {
 
     .then((response) => {
       console.log(response);
+      var msg = response.message;
+      if(msg=="Updated domain report"){
+        document.querySelector("#rpage").innerHTML = "REPORTED";
+        document.querySelector("#reportPage").style.backgroundColor="#32CD32";
+        document.querySelector("#message").innerHTML = "Your report has been recorded!";
+      }
       updateReportCount();
     })
     .catch((err) => {
@@ -74,13 +80,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#ctit").innerHTML = tit;
     console.log(turl); // also has properties like currentTab.id
     document.querySelector("#url").innerHTML = turl;
+    updateReportCount();
+
     if(ulog){
       document
       .querySelector("#reportPage")
       .addEventListener("click", reportHandler);
     }
     
-    updateReportCount();
     //Google Analytics
     (function () {
       var ga = document.createElement("script");
