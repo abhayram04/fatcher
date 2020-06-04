@@ -1,31 +1,36 @@
 #fatitle{
-  font-family: 'Orbitron';
+  font-family: 'Bungee Inline';
   letter-spacing: 1px;
-          font-size: 40px;
+          font-size: 46px;
+          margin-top: 0;
           text-align: center;
-          margin-bottom: 2px;
+          margin-bottom: -18px;
+          color: #ffffff;
 }
 
 #fatsub{
   text-align: center;
   font-family: 'Montserrat';
-  font-weight: 400;
-  font-style: italic;
-  margin-top: 0;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: -10px;
 }
 #mcons {
   width: 200px;
 }
 
 #maind {
-  width: 300px;
+  width: 250px;
  margin:0; 
 }
+body{
+  background-color: #1a8cff;;
+}
 #mdiv {
-  margin-left: 2px;
-  width: 270px;
+  width: 230px;
+  background-color: #ffffff;
   word-wrap: break-word;
-  border: 3px solid  #1a8cff;
+  border: 1px solid  #1a8cff;
   margin:0; padding:10px; border-radius: 10px;
 }
 #rpage{
@@ -35,12 +40,14 @@
 }
 #reportPage {
   min-width: 150px;
+  padding-left: 15px;
+  padding-right: 15px;
   line-height: 2.5;
   text-align: center;
-  border-radius: 10px;
   border: 2px solid rgba(34, 40, 49, 1);
   background-color:  #e60000;
   color: #ffffff;
+  outline:none;
 }
 
 #reportPage:hover {
@@ -56,9 +63,9 @@
 }
 #numReports,
 #pageReports {
-  font-family: 'Assistant'; 
+  font-family: 'Krub'; 
   font-size:16px;
-  color:  #ff3333;
+  color: #e60000;
   font-weight: bolder;
 }
 
@@ -72,7 +79,7 @@
 }
 #btit{
   font-weight: bolder;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #ptit,#purl{
