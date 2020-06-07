@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Fatcher",
-  "version": "0.1",
+  "version": "0.8",
   "icons": {
     "48": "assets/img/ff4-logo.png"
   },
@@ -11,6 +11,5 @@
     "default_icon": "assets/img/ff4-logo.png",
     "default_title": "Fatcher",
     "default_popup": "app.html"
-  },
-  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3kARNI3PXmH+kuwyY20uYJB7RWoLvWkICIa+yl+q1bGl8POugPDVrV9JW8GhyXRy5EkNe02kB0CqQzgFauMZaY+vhXgg/0OpQbYihMKj/iOPP3egkaacrjBuRAZ8tajH59XUaJQwuMZ1FvJtnwaS4J9gBazCZ3LOBel8IqlVs9td+P6VUFMHPCSsNzQtWr5jfs1qqLdrugI9N4dRQV7uCQB6lCUrqjfel+qqBqOoM/Bg09+4Kj82NxoQYRVYt1eO1d43AkJoZ7jy+pwBsG0SuRN0zUWUXBFzdyBliOMLY94/m3fXQPHO2eGVkUd4gqQPmtoZoIBFE+gpqy8RQGukFQIDAQAB"
+  }
 }
