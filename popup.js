@@ -25,7 +25,7 @@ function reportHandler(e) {
       if(msg=="Updated domain report"){
         document.querySelector("#rpage").innerHTML = "REPORTED";
         document.querySelector("#reportPage").style.backgroundColor="#32CD32";
-        document.querySelector("#message").innerHTML = "Your report has been recorded!";
+      
       }
       updateReportCount();
     })
