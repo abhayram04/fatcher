@@ -3,7 +3,7 @@
   letter-spacing: 2px;
           font-size: 36px;
           text-align: center;
-          color: #ffffff;
+          color: #000;
 }
 
 #fatsub{
@@ -14,7 +14,7 @@
 margin-bottom: 15px;
 }
 body{
-  background-color:  #000000  ;
+  background-color:rgba(197, 239, 247, 1);
 }
 #disc{
   text-align: left;
@@ -34,7 +34,7 @@ body{
   width: 230px;
   background-color: #ffffff;
   word-wrap: break-word;
-  border:1px solid black;
+
   margin:0; padding:10px; border-radius: 10px;
 }
 #rpage{
@@ -44,12 +44,13 @@ body{
 }
 #reportPage {
   min-width: 150px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 12px;
+  padding-right: 12px;
   line-height: 2.5;
+  border-radius:15px;
   text-align: center;
   border: 2px solid rgba(34, 40, 49, 1);
-  background-color:  #e60000;
+  background-color: rgba(230,0,0,0.8);
   color: #ffffff;
   outline:none;
 }
@@ -88,7 +89,7 @@ body{
 
 #ptit,#purl{
   font-family: 'Assistant'; 
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bolder;
   color: #e60000;
 }
