@@ -1,7 +1,5 @@
 Fatcher is a fake  news reporting tool.
 
-Installation link: https://chrome.google.com/webstore/detail/fatcher-report-fake-news/hobnmnendfnjaabbflimocadpekjnfkb
-
 ### Support Browsers
 Google Chrome & Microsoft Chromium Edge.
 
