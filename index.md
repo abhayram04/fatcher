@@ -12,4 +12,4 @@ The count of reports on a page and the domain will help readers not fall prey to
 User must be logged into Chrome and have the sync feature enabled. We only ask for this to be able to add your report based on your Email ID and to make the process seamless. You are never asked to provide any login credentials to Fatcher
 
 ### Support or Contact
-Contact us at fatcher.manner@gmail.com
+Contact me at abhayram04@gmail.com
